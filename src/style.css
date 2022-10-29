@@ -75,12 +75,13 @@ li:first-letter {
 .weather-temperature .units {
   position: relative;
   font-size: 16px;
-  top: -34px;
+  top: -34px;  
 }
 
 .weather-temperature .active {
   color: rgb(33, 33, 33);
   cursor: default;
+  font-size: 18px;
 }
 
 .weather-temperature .active:hover {
@@ -109,5 +110,13 @@ li:first-letter {
 @media only screen and (max-width: 413px) {
   .weather-temperature strong {
     font-size: 48px;
-  }  
+  } 
+  
+  .weather-temperature .units {
+    font-size: 12px;
+  }
+
+  .weather-temperature .active {
+    font-size: 14px;
+  }
 }

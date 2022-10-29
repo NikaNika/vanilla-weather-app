@@ -17,7 +17,8 @@
 			integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
 			crossorigin="anonymous"
 		></script>
-		<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+		<!-- <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script> -->
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 		<script
 			src="https://kit.fontawesome.com/79b911f0dd.js"
 			crossorigin="anonymous"
@@ -55,16 +56,19 @@
 						</ul>
 					</div>
 					<div class="row">
-						<div class="col-6">
+						<div class="col-7">
 							<div class="clearfix weather-temperature">
 								<img src="" alt="Clear" id="icon" class="float-left" />
 								<div class="float-left">
 									<strong id="temperature"></strong
-									><span class="units"> °C</span>
+									><span class="units"
+                    ><a href="#" id="celsius-link" class="active">°C</a> |
+                    <a href="#" id="fahrenheit-link">°F</a></span
+                  >
 								</div>
 							</div>
 						</div>
-						<div class="col-6">
+						<div class="col-5">
 							<ul>
 								<li>Humidity: <span id="humidity"></span>%</li>
 								<li>Wind: <span id="wind"></span> m/h</li>
