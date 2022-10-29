@@ -37,42 +37,46 @@
 									class="form-control"
 									id="city-input"
 									autocomplete="off"
+									required
 								/>
-                <button
+								<button
 									type="submit"
 									value="Search"
 									class="btn btn-primary searchButton"
 								>
 									<i class="fa-solid fa-magnifying-glass"></i>
 								</button>
-							</div>							
+							</div>
 						</div>
 					</form>
-					<div class="overview">
-						<h1 id="city"></h1>
-						<ul>
-							<li>Last updated: <span id="date"></span></li>
-							<li id="description"></li>
-						</ul>
-					</div>
-					<div class="row">
-						<div class="col-7">
+
+					<div class="row dailyWeather">
+						<div class="col-md-6 col-sm-12">
 							<div class="clearfix weather-temperature">
 								<img src="" alt="Clear" id="icon" class="float-left" />
 								<div class="float-left">
 									<strong id="temperature"></strong
 									><span class="units"
-                    ><a href="#" id="celsius-link" class="active">°C</a> |
-                    <a href="#" id="fahrenheit-link">°F</a></span
-                  >
+										><a href="#" id="celsius-link" class="active">°C</a> |
+										<a href="#" id="fahrenheit-link">°F</a></span
+									>
 								</div>
 							</div>
+							<div id="description"></div>
 						</div>
-						<div class="col-5">
+						<div class="col-md-6 col-sm-12">
+							<div class="overview">
+								<h1 id="city"></h1>
+								<div>Last updated: <span id="date"></span></div>
+							</div>
+							<hr />
 							<ul>
-								<li>Humidity: <span id="humidity"></span>%</li>
-								<li>Wind: <span id="wind"></span> m/h</li>
+								<li><span class="details-icon"><i class="fa-solid fa-temperature-half"></i></span>Feels like: <span id="feels-like"></span> °C</li>
+								<li><span class="details-icon"><i class="fa-solid fa-arrows-down-to-line"></i></span>Pressure: <span id="pressure"></span> hPa</li>
+								<li><span class="details-icon"><i class="fa-solid fa-droplet"></i></span>Humidity: <span id="humidity"></span>%</li>
+								<li><span class="details-icon"><i class="fa-solid fa-wind"></i></span>Wind: <span id="wind"></span> m/h</li>
 							</ul>
+							
 						</div>
 					</div>
 					<div class="weather-forecast" id="forecast"></div>

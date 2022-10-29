@@ -31,13 +31,13 @@ function formatDay(timestamp) {
 }
 
 function displayForecast(response) {
-	let forecast = response.data.daily;
+	let forecast = response.data.daily;		
 
 	let forecastElement = document.querySelector('#forecast');
 
 	let forecastHTML = `<div class="row">`;
-	forecast.forEach(function (forecastDay, index) {
-		if (index < 6) {
+	forecast.forEach(function (forecastDay, index) {		
+		if (index < 6) {			
 			forecastHTML =
 				forecastHTML +
 				`
@@ -67,11 +67,10 @@ function displayForecast(response) {
 	forecastElement.innerHTML = forecastHTML;
 }
 
-function getForecast(coordinates) {
-	console.log(coordinates);
+function getForecast(coordinates) {	
 	let apiKey = '3bc520cc14bbdedfd7e45158f2ef0439';
-	  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric}`;
-	axios.get(apiUrl).then(displayForecast);
+	let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+	axios.get(apiUrl).then(displayForecast);	
 }
 
 function displayTemperature(response) {
@@ -82,22 +81,24 @@ function displayTemperature(response) {
 	let windElement = document.querySelector('#wind');
 	let dateElement = document.querySelector('#date');
 	let iconElement = document.querySelector('#icon');
+	let pressure = document.querySelector('#pressure');
+	let feelsLike = document.querySelector('#feels-like');
 
 	celsiusTemperature = response.data.main.temp;
 
 	temperatureElement.innerHTML = Math.round(celsiusTemperature);
 	cityElement.innerHTML = response.data.name;
 	descriptionElement.innerHTML = response.data.weather[0].description;
+	feelsLike.innerHTML = Math.round(response.data.main.feels_like);
+	pressure.innerHTML = response.data.main.pressure;
 	humidityElement.innerHTML = response.data.main.humidity;
 	windElement.innerHTML = Math.round(response.data.wind.speed);
 	dateElement.innerHTML = formatDate(response.data.dt * 1000);
 	iconElement.setAttribute(
 		'src',
-		`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+		`https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
 	);
-	iconElement.setAttribute('alt', response.data.weather[0].description);
-
-	console.log(response.data.coord);
+	iconElement.setAttribute('alt', response.data.weather[0].description);	
 
 	getForecast(response.data.coord);
 }
@@ -112,6 +113,7 @@ function handleSubmit(event) {
 	event.preventDefault();
 	let cityInputElement = document.querySelector('#city-input');
 	search(cityInputElement.value);
+	cityInputElement.value = '';
 }
 
 function displayFahrenheitTemperature(event) {
@@ -143,4 +145,4 @@ fahrenheitLink.addEventListener('click', displayFahrenheitTemperature);
 let celsiusLink = document.querySelector('#celsius-link');
 celsiusLink.addEventListener('click', displayCelsiusTemperature);
 
-search('New York');
+search('Kyiv');

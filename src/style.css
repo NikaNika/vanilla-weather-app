@@ -1,13 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;400;500&display=swap');
+
 body {
-  font-family: arial, sans-serif;
+  font-family: 'Kiwi Maru', serif !important;
 }
 
 h1 {
-  color: #878787;
-  font-size: 24px;
-  font-weight: 100;
-  line-height: 28px;
-  margin-bottom: 0;
+  color: #D86545;
+  font-size: 48px !important;
+  font-weight: 500 !important;
+  line-height: 56px !important;  
+  text-align: center;  
+  opacity: 1;
 }
 
 ul {
@@ -20,14 +23,23 @@ li {
   margin: 0;
   padding: 0;
 
-  color: rgb(135, 135, 135);
-  font-size: 16px;
+  color: rgb(33, 33, 33);
+  font-size: 14px;
   font-weight: 100;
-  line-height: 19px;
+  
+  font-family: 'Kiwi Maru', serif;
 }
 
 li:first-letter {
   text-transform: capitalize;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+img {
+  opacity: 1 !important;
 }
 
 .weather-app-wrapper {
@@ -38,25 +50,80 @@ li:first-letter {
 .weather-app {
   padding: 20px;
   border: 1px solid #dadde1;
-  border-radius: 5px;
+  border-radius: 0.375rem;
+  background-image: url('bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .search {
-  position: relative;
+  position: relative; 
 }
 
-.searchButton {
+.search input {
+  opacity: .9;
+}
+
+.search input:focus {
+  border-color: #D86545;
+  box-shadow: none;
+}
+
+.btn.searchButton {
   position: absolute;
   top: 0;
   right: 10px;
+  background: #EC6E4C;
+  border-color: #EC6E4C;
 }
 
-.overview {
+.btn.searchButton:hover {
+  background-color: #FF776B;
+  border-color: #FF776B;
+}
+
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active {
+  background-color: #D86545 !important;
+  border-color: #D86545 !important;
+}
+
+.dailyWeather {
+  align-items: center;
+  background: #ffffff;
+  opacity: .9;
+  border-radius: 0.375rem;
+  padding: 10px;
+  margin: 0 !important;
+}
+
+.overview div, #description {
+  color: rgb(33, 33, 33);  
+  font-weight: 100;
+  line-height: 19px;
   margin-bottom: 20px;
+  text-align: center;
+  font-style: italic;
+  font-family: 'Kiwi Maru', serif;
+}
+
+hr {
+  color: #D86545 !important;
+}
+
+.overview div {
+  font-size: 14px;
+}
+
+#description::first-letter {
+  text-transform: uppercase;
+  font-size: 18px;
 }
 
 .weather-temperature {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .weather-temperature img {
@@ -78,33 +145,63 @@ li:first-letter {
   top: -34px;  
 }
 
+.units a {
+  color: rgb(33, 33, 33);  
+}
+
+.units a:hover {
+  text-decoration: underline !important;
+  color: rgb(33, 33, 33);  
+}
+
 .weather-temperature .active {
-  color: rgb(33, 33, 33);
+  color: #D86545;
   cursor: default;
-  font-size: 18px;
+  font-size: 22px;
 }
 
 .weather-temperature .active:hover {
-  text-decoration: none;
+  text-decoration: none !important;
+  color: #D86545;  
+}
+
+.details-icon {
+	width: 30px;
+	text-align: center;
+	display: inline-block;
+  color: #333333;
 }
 
 .weather-forecast {
   margin-top: 20px;
   text-align: center;
   color: #000;
+  background: #ffffff;
+  opacity: .9;
+  border-radius: 0.375rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .weather-forecast-date {
   font-size: 16px;
-  opacity: 0.5;
+  opacity: 0.8;
 }
 
 .weather-forecast-temperature-min {
-  opacity: 0.5;
+  opacity: 0.6
 }
 
 .weather-forecast-temperatures {
   font-size: 13px;
+}
+
+small a {
+  color: #D86545;
+}
+
+small a:hover {
+  color: #FF776B;
 }
 
 @media only screen and (max-width: 413px) {
